@@ -63,6 +63,9 @@ function Build-Package($Archive, $Path, $Exclude = "", $Root = $false, $Force = 
 function Clean-ConfigFolder($Path) {
     Write-Host "- Cleaning Up ..."
     $names = @(
+        "RimHUD",
+        "CrossPromotions",
+        "SpottedMods.xml",
         "Prefs.xml",
         "KeyPrefs.xml",
         "Knowledge.xml",
@@ -71,8 +74,7 @@ function Clean-ConfigFolder($Path) {
         "*DubsMintMinimapMod.xml",
         "*DubsMintMenusMod.xml",
         "*Moody.xml",
-        "*ModManager.xml",
-        "RimHUD"
+        "*ModManager.xml"
     )
     Get-ChildItem -Directory -Path $Path -Recurse | ForEach-Object {
         $object = $_
