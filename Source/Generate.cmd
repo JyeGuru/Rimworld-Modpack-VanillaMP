@@ -11,7 +11,7 @@ goto:eof
 #>
 
 $autoupdatepath = ".."
-$distributablename = "autoupdate.zip"
+$distributablename = "autoupdate"
 
 function Load-Module ($m) {
     if (Get-Module | Where-Object { $_.Name -eq $m }) {
