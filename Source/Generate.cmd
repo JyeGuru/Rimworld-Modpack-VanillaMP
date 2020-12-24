@@ -94,7 +94,7 @@ function Clean-ConfigFolder($Path) {
             }
         }
     }
-    Set-Content -Path $(Join-Path $Path "Config\DevModeDisabled") -Value ($null)
+    #Set-Content -Path $(Join-Path $Path "Config\DevModeDisabled") -Value ($null)
 }
 
 Write-Host "Processing Config ..." -ForegroundColor Yellow
