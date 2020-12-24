@@ -1,0 +1,15 @@
+# Main game folder
+/Source/Game
+
+# Package output folder
+/Source/Packages
+
+# Package output files
+/*.7z
+/Source/*.zip
+
+# Config files
+/Source/Scripts/Updates/update.json
+/Source/Config/*
+!/Source/Config/Config/*MultiplayerMod.xml
+!/Source/Config/Config/Mods.Config.example
