@@ -35,10 +35,6 @@ robocopy $GamePath $TempFolderPath /XD "Mods" /Z /J /E /PURGE /R:5 /W:1 /NDL | O
 
 Write-Host "Cleaning up game folder ..." -ForegroundColor Yellow
 
-Write-Host "- Removing Steam Integration ..."
-Get-ChildItem $(Join-Path $TempFolderPath "RimWorldWin64_Data") -Directory -Filter "Plugins" -Depth 1 | Remove-Item -Recurse -Force
-Get-ChildItem $TempFolderPath -File -Include "steam_appid.txt" | Remove-Item -Force
-
 Write-Host "- Removing 32-Bit Data folder ..."
 Get-ChildItem $TempFolderPath -Directory -Filter "RimWorldWin_Data" -Depth 1 | Remove-Item -Recurse -Force
 
