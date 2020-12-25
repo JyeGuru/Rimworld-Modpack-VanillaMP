@@ -22,10 +22,11 @@ Start-Process -FilePath ".\RimWorldWin64.exe" -ArgumentList """-savedatafolder=$
 if ($hosting) {
     Write-Host "Done! Game loaded in Host Mode." -ForegroundColor Green
 
+    # Script block required due to mod bug: https://github.com/rwmt/Multiplayer/issues/124
     Write-Host "Watching for bugged arbiter processes ..." -ForegroundColor Blue
     while ($true) {
         Get-WmiObject Win32_Process | Where-Object { $_.Name -eq "RimWorldWin64.exe" } | Foreach-Object {
-            if (($_.CommandLine -like "*-arbiter*") -and ($_.CommandLine -like "-savedatafolder=""")) {
+            if (($_.CommandLine -like "*-arbiter*") -and ($_.CommandLine -like "*-savedatafolder=""*")) {
                 $arbiterpid = $_.ProcessId
                 $commandline = $_.CommandLine -Replace '^.*RimWorldWin64.exe\" ' -Replace '-savedatafolder.*$', """-savedatafolder=$(Resolve-Path $configpath)"""
                 Write-Host "Arbiter found: PID $arbiterpid" -ForegroundColor Green
@@ -37,8 +38,8 @@ if ($hosting) {
                 Start-Process -FilePath ".\RimWorldWin64.exe" -ArgumentList $commandline
             } 
         }
-        Start-Sleep -Seconds 1
-    }
+        Start-Sleep -Seconds 1      
+    } # End workaround
 }
 else {
     Write-Host "Done! Game loaded in Client Mode. You can close this window." -ForegroundColor Green
