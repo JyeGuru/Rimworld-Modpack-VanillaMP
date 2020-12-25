@@ -81,7 +81,7 @@ function Clean-ConfigFolder($Path) {
         $names |Foreach-Object {
             if ($object.Name -like $_) {
                 Write-Host "- Removing Folder: $(Resolve-Path -Relative $object.FullName)" -ForegroundColor Blue
-                Remove-Item $object.FullName -Recurse -Force
+                Get-ChildItem -File -Path $object.FullName -Recurse | Remove-Item -Force
             }
         }
     }
