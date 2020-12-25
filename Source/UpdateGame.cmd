@@ -52,6 +52,10 @@ robocopy "$TempFolderPath" ".\Game" /XD "Mods" /Z /J /E /PURGE /R:5 /W:1 /NDL | 
 Write-Host "- Removing temp folder ..."
 Remove-Item $TempFolderPath -Recurse -Force
 
+Write-Host "Removing package file ..." -ForegroundColor Yellow
+Get-ChildItem "." -File -Filter "Game.7z" -Depth 1 | Remove-Item -Force
+Write-Host "- Please regenerate package files!"
+
 Write-Host "Done! Please close this window." -ForegroundColor Green
 
 Start-Sleep -Seconds 300

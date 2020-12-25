@@ -118,7 +118,7 @@ if (Test-Path $updatejson) {
 Compress-Archive -Path ".\Scripts\*" -DestinationPath ".\$distributablename.zip" -Force
 
 if ($autoupdatepath) {
-    Write-Host "Copying packages ..."
+    Write-Host "Copying packages ..." -ForegroundColor Yellow
     Get-ChildItem -Path ".\Packages" -Filter *.7z | Copy-Item -Destination $autoupdatepath
 }
 
