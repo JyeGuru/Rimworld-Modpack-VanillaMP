@@ -133,7 +133,7 @@ Compress-Archive -Path ".\Scripts\*" -DestinationPath ".\$distributablename.zip"
 if ($OutputPath) {
     $OutputPath = Resolve-Path $OutputPath
     Write-Host "Copying packages ..." -ForegroundColor Yellow
-    Get-ChildItem -Path ".\Packages" -Filter *.7z | Copy-Item -Destination $autoupdatepath
+    robocopy ".\Packages" $OutputPath /Z /J /E /R:5 /W:1 /NDL | Out-Null
 }
 
 Write-Host "Done! Please close this window." -ForegroundColor Green
