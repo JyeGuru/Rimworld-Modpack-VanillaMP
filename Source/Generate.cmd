@@ -10,8 +10,20 @@ endlocal
 goto:eof
 #>
 
-$autoupdatepath = ".."
-$distributablename = "autoupdate"
+$ConfigFile = ".\config.json"
+
+if (Test-Path $ConfigFile) {
+    $Config = Get-Content $ConfigFile | ConvertFrom-Json
+}
+else {
+    Write-Host "ERROR: Critical file(s) missing, please fix this." -ForegroundColor Red
+    break
+}
+
+$OutputPath = $Config.OutputPath
+if ((!$OutputPath) -or (!(Test-Path $OutputPath))) {
+    Write-Host "ERROR: Invalid output path in config." -ForegroundColor Red
+}
 
 function Load-Module ($m) {
     if (Get-Module | Where-Object { $_.Name -eq $m }) {
@@ -111,13 +123,15 @@ Write-Host "Processing Scripts ..." -ForegroundColor Yellow
 Build-Package -Archive ".\Scripts.7z" -Path ".\Scripts" -Root $true -Force $true
 
 Write-Host "Building distributable zip ..." -ForegroundColor Yellow
+$distributablename = "autoupdate"
 $updatejson = ".\Scripts\Updates\update.json"
 if (Test-Path $updatejson) {
     $distributablename = [string](Get-Content $updatejson | ConvertFrom-Json).PackInfo -Replace " "
 }
 Compress-Archive -Path ".\Scripts\*" -DestinationPath ".\$distributablename.zip" -Force
 
-if ($autoupdatepath) {
+if ($OutputPath) {
+    $OutputPath = Resolve-Path $OutputPath
     Write-Host "Copying packages ..." -ForegroundColor Yellow
     Get-ChildItem -Path ".\Packages" -Filter *.7z | Copy-Item -Destination $autoupdatepath
 }
