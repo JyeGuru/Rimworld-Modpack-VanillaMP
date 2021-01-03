@@ -10,6 +10,3 @@
 
 # Config files
 /Source/Scripts/Updates/update.json
-/Source/Config/*
-!/Source/Config/Config/*MultiplayerMod.xml
-!/Source/Config/Config/Mods.Config.example

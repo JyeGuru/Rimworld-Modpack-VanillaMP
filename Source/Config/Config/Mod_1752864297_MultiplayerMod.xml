@@ -5,8 +5,8 @@
 		<transparentChat>True</transparentChat>
 		<serverSettings>
 			<autosaveInterval>0.5</autosaveInterval>
-			<pauseOnAutosave>True</pauseOnAutosave>
 			<direct>True</direct>
+			<arbiter>False</arbiter>
 		</serverSettings>
 	</ModSettings>
 </SettingsBlock>
