@@ -82,11 +82,7 @@ function Clean-ConfigFolder($Path) {
         "KeyPrefs.xml",
         "Knowledge.xml",
         "ColourPicker.xml",
-        "LastPlayedVersion.txt",
-        "*DubsMintMinimapMod.xml",
-        "*DubsMintMenusMod.xml",
-        "*Moody.xml",
-        "*ModManager.xml"
+        "LastPlayedVersion.txt"
     )
     Get-ChildItem -Directory -Path $Path -Recurse | ForEach-Object {
         $object = $_
