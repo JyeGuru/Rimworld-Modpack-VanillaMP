@@ -1,4 +1,5 @@
 Basic Setup:
+- Create config.json using the example file provided
 - Edit config.json with the paths to your game folder and mods folder. These can be Steam or DRM-Free based.
 - Put your ModsConfig.xml into .\Config\Config (or use the example provided)
 - Put any other files (scenarios/saves/etc) into the relevant .\Config folders
