@@ -15,7 +15,8 @@ $ModsConfigFile = ".\Config\Config\ModsConfig.xml"
 
 if ((Test-Path $ConfigFile) -and (Test-Path $ModsConfigFile)) {
     $Config = Get-Content $ConfigFile | ConvertFrom-Json
-} else {
+}
+else {
     Write-Host "ERROR: Critical file(s) missing, please fix this." -ForegroundColor Red
     break
 }
@@ -35,11 +36,14 @@ $TempFolderPath = Join-Path $Env:Temp $(New-Guid); New-Item -Type Directory -Pat
 
 Write-Host "Synching mod folders to temp ..." -ForegroundColor Yellow
 Get-ChildItem -Directory -Path $ModsPath | ForEach-Object {
-    $Package = ([xml](Get-Content "$(Join-Path $_.FullName "About\About.xml")")).ModMetaData.PackageId
-    if ($ModList -contains $Package) {
-        Write-Host "- Updating: $($_.Name) ($Package)" -ForegroundColor Blue
-        robocopy "$($_.FullName)" "$(Join-Path $TempFolderPath $_.Name)" /Z /J /E /PURGE /R:5 /W:1 /NDL | Out-Null
-        $ModList.Remove($Package.ToLower())
+    $ModInfoFile = Join-Path $_.FullName "About\About.xml"
+    if (Test-Path $ModInfoFile) {
+        $Package = ([xml](Get-Content $ModInfoFile)).ModMetaData.PackageId
+        if ($ModList -contains $Package) {
+            Write-Host "- Updating: $($_.Name) ($Package)" -ForegroundColor Blue
+            robocopy "$($_.FullName)" "$(Join-Path $TempFolderPath $_.Name)" /Z /J /E /PURGE /R:5 /W:1 /NDL | Out-Null
+            $ModList.Remove($Package.ToLower())
+        }
     }
 }
 
