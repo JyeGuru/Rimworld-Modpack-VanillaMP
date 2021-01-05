@@ -1,5 +1,5 @@
 # Rimworld-Multiplayer-Package-Generator
 
-For the different branches (packs), see [the branch info file](BRANCHINFO.md) for details.
+This is a skeleton to be used to build a multiplayer modpack for Rimworld.
 
 See [Source/Instructions.txt](Source/Instructions.txt) for how to use once cloned/downloaded.
