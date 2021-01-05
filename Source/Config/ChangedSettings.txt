@@ -83,8 +83,8 @@ Various Space Ship Chunk:
 - Also use small chunks in event: True
 
 Wall Light:
-- Show Lit Area: True
-- Extended Colors: True
+- Wall Light / Show Lit Area: True
+- Wall Light / Extended Colors: True
 - Show Facing Direction: True
 
 --- HugsLib Settings
