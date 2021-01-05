@@ -1,0 +1,21 @@
+[
+  {
+    "PackInfo": "Pack Name Here"
+  },
+  {
+    "Filename": "Game.7z",
+    "Uri": ""
+  },
+  {
+    "Filename": "Mods.7z",
+    "Uri": ""
+  },
+  {
+    "Filename": "Config.7z",
+    "Uri": ""
+  },
+  {
+    "Filename": "Scripts.7z",
+    "Uri": ""
+  }
+]

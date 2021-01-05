@@ -1,0 +1,46 @@
+Basic Setup:
+- Create config.json using the example file provided
+- Edit config.json with the paths to your game folder and mods folder. These can be Steam or DRM-Free based.
+- Put your ModsConfig.xml into .\Config\Config (or use the example provided)
+- Put any other files (scenarios/saves/etc) into the relevant .\Config folders
+- Run UpdateGame.cmd to bring the game files over (or manually copy them into the .\Game folder)
+- Run UpdateMods.cmd to bring the mod files over (or manually copy them into the .\Game\Mods folder)
+- Run Run.cmd to load the game and test the setup, also configure mod settings
+- Quit the game to ensure all files are saved correctly
+- Run Generate.cmd to package up the files for distribution
+
+Manual Install:
+- Somehow distribute the four 7z files generated in the Packages folder
+- Unzip them somewhere (all into the same root)
+- Run Run.cmd to load the game and play!
+
+Manual Update:
+- Somehow distribute the four updated 7z files generated in the Packages folder
+- Put them into the Updates folder where the game is currently installed
+- Run Update.cmd
+
+Configure Autoupdates:
+- Take the four 7z files and upload them somewhere you can get a direct download link to them
+- Create .\Scripts\Updates\update.json with the permalinks (see example)
+- Re-run Generate.cmd to update the Scripts.7z package and the autoupdate.zip
+- Replace your uploaded Scripts.7z with the new one (keeping the same permalink!)
+
+AutoUpdate Install:
+- Somehow distribute the autoupdate.zip file
+- Unzip it into a folder somewhere
+- Run Update.cmd
+
+AutoUpdate Update:
+- Generate and replace the uploaded 7z files with the new ones (keeping the same permalinks!)
+- Run Update.cmd on the clients
+
+NOTE ON ONEDRIVE:
+I use OneDrive for hosting these files, which works perfectly. However it's a bit of a pain to get the direct download URLs.
+- Put the files in a OneDrive folder somewhere
+- Wait for them to sync
+- Right-click in the folder and "View Online"
+- In the web interface, repeat the below steps for each one (only tested in Chrome/New Edge)
+- Right-Click, Share
+- Change options to "Anyone with the link can view" and "Copy Link"
+- Open an incognito tab and paste the link, this will download the file
+- In the Downloads panel (Ctrl-J) right-click and copy the URL of the downloaded file: This is the one you need!

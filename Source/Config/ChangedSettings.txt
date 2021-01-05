@@ -1,0 +1,96 @@
+Settings Changed from Defaults:
+
+--- Custom Mod Settings
+NOTE: Settings required for desync protection are marked with ***
+
+Animal Tab:
+- Higher contrast checkboxes: True
+
+CommonSense:
+- *** Miscellaneous / Enable a button in colonist inventory to mark items for hauling to stockpile: False
+
+Damage Indicators:
+- Enable damage indicators for neutral faction: True
+
+Force Do Job:
+- Allow Force Pawns to Self Tend: True
+
+Inspiration Settings:
+- Dream XP Amount: 500
+- Inspired XP Amount: 1000
+
+LWM's Deep Storage:
+- Robots can always haul: True
+- Use Deep Storage custom Right Click: True
+
+Mad Skills:
+- Decay multiplier: 100%
+- Tiered: True
+
+MendAndRecycle:
+- Removes Deadman from Apparel: False
+
+More Trait Slots:
+- Minimum Number of Traits Per Pawn: 3
+- Maximum Number of Traits Per Pawn: 6
+
+Multiplayer:
+- Username: Your Username
+- Transparent chat: True
+
+Non Uno Pinata:
+- When cremated: Unload equipment from the corpse: False
+- When cremated: Unload inventory from the corpse: False
+
+Numbers:
+- Maximum height relative to screensize: 80%
+
+PathAvoid:
+- Button Positon: Top [1000]
+
+Prosthetic No Missing Body Parts:
+- Arm / FSFBionicArm: True
+- Leg / KneeSpike: True
+- Leg / FSFAdvBionicLeg: True
+
+Replace Stuff:
+- Corner tiles are buildable and mineable from inside: False
+
+Room Size Tolerance:
+- Rather Tight: 6
+- Average-sized: 12
+- Somewhat Spacious: 28
+- Quite Spacious: 45
+- Very Spacious: 75
+- Extremely Spacious: 175
+
+Royal Tweaks:
+- Throne Rooms Required Only by Highest Titled Royals: True
+- Royal Spose Wants Throne Room Too: True
+- Restore Disabled Royal Passion Skills: True; Only Major
+
+Show Draftee's Weapon:
+- Show When Not Drafted: True
+- Show When Traveling: True
+
+TradingSpot:
+- Visitors go to Trading Spot: False
+
+Vanilla Fishing Expanded:
+- Fisher drops fish on the ground instead of hauling to stockpiles: True
+
+Various Space Ship Chunk:
+- Also use small chunks in event: True
+
+Wall Light:
+- Wall Light / Show Lit Area: True
+- Wall Light / Extended Colors: True
+- Show Facing Direction: True
+
+--- HugsLib Settings
+
+Avoid Friendly Fire:
+- Protect All Tame Animals: True
+
+Heat Map:
+- Show Outdoor Thermometer: False

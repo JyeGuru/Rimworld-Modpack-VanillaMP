@@ -1,0 +1,22 @@
+# Main game folder
+/Source/Game
+
+# Package output folder
+/Source/Packages
+
+# Package output files
+/*.7z
+/Source/*.zip
+
+# Config files
+/Source/Scripts/Updates/update.json
+/Source/config.json
+
+# Irrelevant stuff from playtesting
+/Source/Config/MpDesyncs
+/Source/Config/LocalConfigsBackup*
+/Source/Config/Config/LastPlayedVersion.txt
+/Source/Config/Config/Knowledge.xml
+/Source/Config/Config/KeyPrefs.xml
+/Source/Config/Config/Prefs.xml
+/Source/Config/Config/RimHUD
